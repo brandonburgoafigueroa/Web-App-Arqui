@@ -1,0 +1,15 @@
+﻿@page
+@model Web_App_Arqui.Pages.InitialPromtModel
+@{
+    ViewData["Title"] = "InitialPromt";
+}
+
+<h3>@Model.Message</h3>
+<div class="row">
+    <form method="post" autocomplete="off">
+        <div class="col-lg-5">
+            <input asp-for="IDMailbox" type="text" class="form-control" />
+            <input type="submit" class="btn btn-default" value="Llamar"/>
+        </div>
+    </form>
+</div>

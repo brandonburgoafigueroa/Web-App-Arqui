@@ -1,0 +1,20 @@
+﻿@page
+@model Web_App_Arqui.Pages.MailboxMenuModel
+@{
+    ViewData["Title"] = "MailboxMenu";
+}
+
+<h2>Menu Buzón</h2>
+<div class="row">
+    <div class="container alert alert-info col-lg-5">
+        <div class="row">
+            <strong>   <a asp-page="MessageMenu">Escuchar mensajes</a></strong>
+        </div>
+        <div class="row">
+            <strong>  <a asp-page="ChangePasscode">Cambiar codigo de acceso</a></strong>
+        </div>
+        <div class="row">
+            <strong>  <a asp-page="ChangeGreeting">Cambiar bienvenida</a></strong>
+        </div>
+    </div>
+</div>
