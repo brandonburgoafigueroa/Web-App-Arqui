@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web App Arqui", "Web App Arqui\Web App Arqui.csproj", "{FE43DC7F-543C-41A9-A79D-B391E16F5DCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE43DC7F-543C-41A9-A79D-B391E16F5DCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE43DC7F-543C-41A9-A79D-B391E16F5DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE43DC7F-543C-41A9-A79D-B391E16F5DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE43DC7F-543C-41A9-A79D-B391E16F5DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E37B7A36-F07A-4F59-9B37-DA49A93AFB23}
+	EndGlobalSection
+EndGlobal
