@@ -14,5 +14,21 @@ namespace Web_App_Arqui.Pages
         {
 
         }
+        public IActionResult OnPostListen()
+        {
+            return RedirectToPage("/MessageMenu");
+        }
+        public IActionResult OnPostPasscode()
+        {
+            return RedirectToPage("/ChangePasscode");
+        }
+        public IActionResult OnPostGreeting()
+        {
+            return RedirectToPage("/ChangeGreeting");
+        }
+        public IActionResult OnPostExit()
+        {
+            return RedirectToPage("/Connect");
+        }
     }
 }

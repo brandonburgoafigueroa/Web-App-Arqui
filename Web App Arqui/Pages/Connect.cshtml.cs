@@ -13,8 +13,8 @@ namespace Web_App_Arqui.Pages
         public string Message { set; get; }
         [BindProperty]
         public string IDMailbox { set; get; }
-        private static string MessageInitial = "Enter mailbox number followed by #";
-        private static string MessageErrorConnection = "Incorrect mailbox number. Try again!";
+        private static string MessageInitial = "Ingrese el numero de buzon y presione llamar";
+        private static string MessageErrorConnection = "Numero de buzon incorrecto. Intentelo de nuevo!";
 
         public void OnGet()
         {

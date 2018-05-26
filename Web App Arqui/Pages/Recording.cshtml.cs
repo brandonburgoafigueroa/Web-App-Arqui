@@ -40,7 +40,7 @@ namespace Web_App_Arqui.Pages
             bool result = Passcode == Convert.ToString(1);
             if (result)
                 return RedirectToPage("/MailboxMenu");
-            Error = "Incorrect passcode. Try again!";
+            Error = "Codigo de acceso incorrecto, vuelva a intentar!";
             return Page();
         }
     }

@@ -9,9 +9,9 @@ namespace Web_App_Arqui.Pages
 {
     public class IndexModel : PageModel
     {
-        public void OnGet()
+        public IActionResult OnGet()
         {
-
+            return RedirectToPage("/Connect");
         }
     }
 }

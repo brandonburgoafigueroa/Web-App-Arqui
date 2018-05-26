@@ -6,15 +6,30 @@
 
 <h2>Menu Buzón</h2>
 <div class="row">
-    <div class="container alert alert-info col-lg-5">
+    <div class="col-lg-5">
         <div class="row">
-            <strong>   <a asp-page="MessageMenu">Escuchar mensajes</a></strong>
+            <form asp-page-handler="Listen" method="post">
+                <input class="btn btn-primary" type="submit" value="Escuchar mensajes" />
+            </form>
+
+        </div>
+        <br />
+        <div class="row">
+            <form asp-page-handler="Passcode" method="post">
+                <input class="btn btn-primary" type="submit" value="Cambiar codigo de acceso" />
+            </form>
+        </div>
+        <br />
+        <div class="row">
+            <form asp-page-handler="Greeting" method="post">
+                <input class="btn btn-primary" type="submit" value="Cambiar saludo" />
+            </form>
         </div>
         <div class="row">
-            <strong>  <a asp-page="ChangePasscode">Cambiar codigo de acceso</a></strong>
+            <br />
+            <form asp-page-handler="Exit" method="post">
+                <input class="btn btn-primary" type="submit" value="Salir" />
+            </form>
         </div>
-        <div class="row">
-            <strong>  <a asp-page="ChangeGreeting">Cambiar bienvenida</a></strong>
         </div>
     </div>
-</div>
