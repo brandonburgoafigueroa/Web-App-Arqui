@@ -19,47 +19,29 @@ namespace Web_App_Arqui.Pages
         public string Error { set; get; }
         [BindProperty]
         public string Greeting { set; get; }
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-            Mailbox Mailbox = new Mailbox();
-            Greeting = Mailbox.Greeting;
+            Greeting = await ApiConsumer.Consumer.GetGrreeting();
         }
-        public IActionResult OnPostSendMessage()
+        public async Task<IActionResult> OnPostSendMessageAsync()
         {
             //añadir mensage
-            bool result = true;
+            bool result = await ApiConsumer.Consumer.ExecuteCommandMessageAsync(Message);
             if (result)
                 return RedirectToPage("/Connect");
             Error = "Algo sucedio";
             return Page();
             
         }
-        public IActionResult OnPostLogin()
+        public async Task<IActionResult> OnPostLoginAsync()
         {
             //estado
-            bool result = Passcode == Convert.ToString(1);
+            bool result = await ApiConsumer.Consumer.ExecuteCommandAsync(Passcode);
             if (result)
                 return RedirectToPage("/MailboxMenu");
             Error = "Codigo de acceso incorrecto, vuelva a intentar!";
             return Page();
         }
     }
-    public class Mailbox
-    {
-        public MessageQueue NewMessages { set; get; }
-        public MessageQueue KeptMessages { set; get; }
-        public string Passcode { set; get; }
-        public string Greeting { set; get; }
-
-    }
-    public class MessageQueue
-    {
-        public List<Message> Queue { set; get; }
-    }
-    public class Message
-    {
-        public string From { set; get; }
-
-        public string Text { set; get; }
-    }
+ 
 }

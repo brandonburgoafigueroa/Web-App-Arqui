@@ -20,19 +20,14 @@ namespace Web_App_Arqui.Pages
         {
             Message = MessageInitial;
         }
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPost()
         {
-            bool result = simulate();
+            bool result = await ApiConsumer.Consumer.ExecuteCommandAsync(IDMailbox);
             if (result)
                 return RedirectToPage("/Recording");
             Message = MessageErrorConnection;
             return Page();
         }
 
-        /*references*/
-        public bool simulate()
-        {
-            return IDMailbox==Convert.ToString(1);
-        }
     }
 }

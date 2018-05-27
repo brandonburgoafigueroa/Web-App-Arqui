@@ -15,12 +15,12 @@ namespace Web_App_Arqui.Pages
         {
 
         }
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
-            bool result = true;
+            bool result = await ApiConsumer.Consumer.ExecuteCommandAsync(Passcode);
             if (result)
             {
-                return RedirectToPage("/MessageMenu");
+                return RedirectToPage("/MailboxMenu");
             }
             return Page();
         }

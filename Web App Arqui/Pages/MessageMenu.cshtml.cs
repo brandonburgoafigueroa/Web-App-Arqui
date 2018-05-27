@@ -18,22 +18,17 @@ namespace Web_App_Arqui.Pages
         {
 
         }
-        public IActionResult OnPostListen()
+        public async Task<IActionResult> OnPostListenAsync()
         {
-            bool result = true;
-            if (result)
-            {
-                CurrentMessageText = "Mensaje nuevo";
+            string result = await ApiConsumer.Consumer.GetCurrentMessage();
+                CurrentMessageText = result;
                 Message = "Mensaje actual";
                 Error = "";
                 return Page();
-            }
-            Error = "Algo salio mal";
-            return Page();
         }
-        public IActionResult OnPostSave()
+        public async Task<IActionResult> OnPostSaveAsync()
         {
-            bool result = true;
+            bool result = await ApiConsumer.Consumer.ExecuteCommandAsync("2");
             if (result) { 
                 Error = "";
             return Page();
@@ -42,9 +37,9 @@ namespace Web_App_Arqui.Pages
             return Page();
 
         }
-        public IActionResult OnPostDelete()
+        public async Task<IActionResult> OnPostDeleteAsync()
         {
-            bool result = true;
+            bool result = await ApiConsumer.Consumer.ExecuteCommandAsync("3");
             if (result) { 
                 Error = "";
             return Page();
@@ -53,9 +48,9 @@ namespace Web_App_Arqui.Pages
             return Page();
         }
         
-        public IActionResult OnPostMailBoxMenu()
+        public async Task<IActionResult> OnPostMailBoxMenuAsync()
         {
-            bool result = true;
+            bool result = await ApiConsumer.Consumer.ExecuteCommandAsync("4");
             if (result)
             {
                 Error = "";
