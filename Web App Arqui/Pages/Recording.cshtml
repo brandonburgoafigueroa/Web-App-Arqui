@@ -6,7 +6,7 @@
 <h3>@Model.Error</h3>
 <div class="row">
     <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#Message">Mensage</a></li>
+        <li class="active"><a data-toggle="tab" href="#Message">Mensaje</a></li>
         <li><a data-toggle="tab" href="#Login">Iniciar sesion</a></li>
     </ul>
     <div class="tab-content">
@@ -15,7 +15,7 @@
                 <h2>@Model.Greeting</h2>
                 <form asp-page-handler="SendMessage" method="post" autocomplete="off">
                     <textarea asp-for="Message" class="form-control"></textarea>
-                    <br />
+
                     <input type="submit" class="btn btn-success" value="Enviar" />
                 </form>
             </div>
@@ -25,11 +25,12 @@
 
             <div class="col-lg-5">
                 <form asp-page-handler="Login" method="post" autocomplete="off">
-                    <input asp-for="Passcode" class="form-control" />
-                    <br />
+                    <textarea readonly asp-for="Passcode" style="font-weight: bold; font-size:24px" type="text" class="form-control"></textarea>
+                    @Html.Partial("Phone")
                     <input type="submit" class="btn btn-success" value="Ingresar" />
                 </form>
             </div>
         </div>
     </div>
 </div>
+@Html.Partial("ScriptsPhone", "Passcode")
